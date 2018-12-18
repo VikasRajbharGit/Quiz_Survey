@@ -1,0 +1,19 @@
+{% extends 'quiz/base.html' %}
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">{{ questions.first.quiz.title }}</legend>
+        </fieldset>
+        {% for question in questions %}
+            <p>{{ question.text }}</p>
+            A <input type="radio" name="{{ question.id }} choice" value="A" checked> {{ question.a }}<br>
+            B <input type="radio" name="{{ question.id }} choice" value="B"> {{ question.b }}<br>
+            C <input type="radio" name="{{ question.id }} choice" value="C"> {{ question.c }}<br>
+            D <input type="radio" name="{{ question.id }} choice" value="D"> {{ question.d }}
+        {% endfor %}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Submit</button>
+        </div>
+    </form>
+{% endblock %}
