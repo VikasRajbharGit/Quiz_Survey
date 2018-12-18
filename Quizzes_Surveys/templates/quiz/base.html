@@ -17,13 +17,34 @@
 </head>
 <body>
 
-<nav class="navbar navbar-light" style="background-color: #0c4b33;">
+<nav class="navbar navbar-light" style="background-color: #43A047; font-family:Garamond Header; font-size:25px;">
 
-    <div><p class="text-white"><strong><u>Vedang Naik</u></strong></p></div>
+    <div><p class="text-white" ><strong> Quiz N Survey</strong></p></div>
     <div align="right"><p class="text-white"><strong>Log Out</strong></p></div>
 </nav>
 
-{% block content %}{% endblock %}
+<div class="container-fluid" style="margin:20px;">
+    <div class="row">
+        <div class="col-3 col-sm-1 col-md-2">
+            <div class="row">
+                <button class="btn btn-success" style="padding:10px; border-radius:15px; font-family:Verdana;"> Quizzes</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-secondary" style="padding:10px; border-radius:15px; font-family:Verdana;"> Exit Surveys</button>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-secondary" style="padding:10px; border-radius:15px; font-family:Verdana;"> Personal</button>
+            </div>
+        </div>
+        <div class="col-9 col-md-10 col-sm-11">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- Optional JavaScript -->
